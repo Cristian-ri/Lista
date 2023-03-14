@@ -4,8 +4,8 @@ ListaEnlazada::ListaEnlazada(){
 	head = 0;
 }
 
-void ListaEnlazada::pushFront(int key){
-	Nodo *nuevoNodo = new Nodo(key);
+void ListaEnlazada::pushFront(int _key){
+	Nodo *nuevoNodo = new Nodo(_key);
 	nuevoNodo->next = head;
 	head  = nuevoNodo;
 }
@@ -25,7 +25,25 @@ int ListaEnlazada::popFront(){
    {
     cout<<"la lista esta vacia"<<endl;
    }
-   int dato=head->key;
-   head=head->next;
+   int dato = head->key;
+   head = head->next;
    return dato;
+}
+
+void ListaEnlazada::pushBack(int _key){
+	
+	Nodo *nuevoNodo  = new Nodo(_key);
+	Nodo *iterador  = head;
+	
+	if(head != NULL){
+		while(iterador->next != NULL){
+			iterador = iterador->next;
+		}
+		//Al salir del while, se encuentra el último.
+		iterador->next = nuevoNodo;
+	}
+}
+
+bool ListaEnlazada::Empty(){
+	return head == 0;
 }

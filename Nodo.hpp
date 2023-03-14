@@ -2,7 +2,7 @@
 using std::cout;
 using std::cin;
 using std::endl;
-
+//Clase autoreferenciada
 class Nodo{
 	public:
 		int key;

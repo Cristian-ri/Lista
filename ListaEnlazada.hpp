@@ -9,7 +9,10 @@ class ListaEnlazada{
 		ListaEnlazada();
 		void pushFront(int);
 		void printListaEnlazada();
+		void pushBack(int);
 		int popFront();
+		bool Empty();
+		
 	
 	private:
 		Nodo *head;	
