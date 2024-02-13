@@ -1,7 +1,7 @@
 #include "ListaEnlazada.hpp"
 
 ListaEnlazada::ListaEnlazada(){
-	head = 0;
+	this->head = 0;
 }
 
 void ListaEnlazada::pushFront(int _key){
