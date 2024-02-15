@@ -5,8 +5,11 @@ ListaEnlazada::ListaEnlazada(){
 }
 
 void ListaEnlazada::pushFront(int _key){
+	//Crando un nodo O(1)
 	Nodo *nuevoNodo = new Nodo(_key);
+	//NuevoNodo apuntnado al siguiente O(1)
 	nuevoNodo->next = this->head;
+	//Nodo head apuntando al primer elemento O(1)
 	this->head  = nuevoNodo;
 }
 
@@ -31,12 +34,17 @@ int ListaEnlazada::popFront(){
 }
 
 void ListaEnlazada::pushBack(int _key){
-	
+	//Creando el nuevo nodo con memoria dinamica 
 	Nodo *nuevoNodo  = new Nodo(_key);
+	//Creando el nodo auxiliar o iterador
 	Nodo *iterador  = this->head;
-	
+	/*La condicion se agrega para tomar el caso 
+	que la lista solo tenga un elemento o este vacia*/
+
 	if(head != NULL){
+		//Buscar el ultimo elemento o nodo O(1)
 		while(iterador->next != NULL){
+			//Esta operacion O(1)
 			iterador = iterador->next;
 		}
 		//Al salir del while, se encuentra el último.
