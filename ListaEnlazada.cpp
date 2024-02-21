@@ -1,4 +1,8 @@
 #include "ListaEnlazada.hpp"
+#include<iostream>
+using std::cout;
+using std::cin;
+using std::endl;
 
 ListaEnlazada::ListaEnlazada(){
 	this->head = 0;
@@ -50,6 +54,22 @@ void ListaEnlazada::pushBack(int _key){
 		//Al salir del while, se encuentra el último.
 		iterador->next = nuevoNodo;
 	}
+}
+
+int ListaEnlazada::popback(){
+	Nodo *iterador  = this->head;
+	/*La condicion se agrega para tomar el caso 
+	que la lista solo tenga un elemento o este vacia*/
+	int dato = head->key;
+	if(head != NULL){
+		//Buscar el ultimo elemento o nodo O(1)
+		while(iterador->next != NULL){
+			//Esta operacion O(1)
+			iterador = iterador->next;
+		}
+		head->next = NULL;
+	}
+	return dato;  
 }
 
 bool ListaEnlazada::Empty(){

@@ -1,7 +1,3 @@
-#include<iostream>
-using std::cout;
-using std::cin;
-using std::endl;
 #include "Nodo.hpp"
 
 class ListaEnlazada{
@@ -18,6 +14,8 @@ class ListaEnlazada{
 		void pushBack(int);
 		//Elimina datos al inicio de la lista
 		int popFront();
+		//Elimina datos al fian de la lista
+		int popback();
 		//Verifica si la lista esta vacia
 		bool Empty();
 		

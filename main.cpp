@@ -20,6 +20,10 @@ int main(int argc, char** argv)
 	l1.popFront();
 	l1.printListaEnlazada();
 	l1.Empty();
+	cout<<"**********************"<<endl;
+	l1.popback();
+	l1.printListaEnlazada();
+
 	
 	return 0;
 }
