@@ -58,18 +58,21 @@ void ListaEnlazada::pushBack(int _key){
 
 int ListaEnlazada::popback(){
 	Nodo *iterador  = this->head;
+	Nodo *aux;
+	int dato = 0;
 	/*La condicion se agrega para tomar el caso 
 	que la lista solo tenga un elemento o este vacia*/
-	int dato = head->key;
 	if(head != NULL){
 		//Buscar el ultimo elemento o nodo O(1)
 		while(iterador->next != NULL){
 			//Esta operacion O(1)
+			aux = iterador;
 			iterador = iterador->next;
+			dato = iterador->key;
 		}
-		head->next = NULL;
-	}
-	return dato;  
+	} 
+	aux->next = NULL;
+	return dato;
 }
 
 bool ListaEnlazada::Empty(){
